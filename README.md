@@ -68,7 +68,8 @@ $ mne watershed_bem -s Z201
 ## Code
 The code of the project was developed and tested for Ubuntu OS (20-22 x64 version) and has the following structure (directory names provide explanations of their contents):
 
-```
+
+
 code
 â”œâ”€â”€ analysis
 â”‚         â”œâ”€â”€ 0-preprocessing_for_clustering
