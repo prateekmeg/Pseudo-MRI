@@ -68,33 +68,26 @@ $ mne watershed_bem -s Z201
 ## Code
 The code of the project was developed and tested for Ubuntu OS (20-22 x64 version) and has the following structure (directory names provide explanations of their contents):
 
-
-
-code
-â”œâ”€â”€ analysis
-â”‚         â”œâ”€â”€ 0-preprocessing_for_clustering
-â”‚         â”‚         â”œâ”€â”€ ...
-â”‚         â”œâ”€â”€ 1-tfce_clustering
-â”‚         â”‚         â”œâ”€â”€ ...
-â”‚         â”œâ”€â”€ 2-clustering_results_analytics
-â”‚         â”‚         â”œâ”€â”€ ...
-â”‚         â””â”€â”€ modules
-â”‚             â”œâ”€â”€ clustering.py
-â”‚             â””â”€â”€ data_ops.py
-â”œâ”€â”€ envs
-â”‚         â”œâ”€â”€ envs_for_between_groups_clustering_in_auditory_cortex_with_morphological_sign_flip.json
-â”‚         â”œâ”€â”€ envs_for_interaction_clustering_in_auditory_cortex_with_morphological_sign_flip.json
-â”‚         â””â”€â”€ envs_for_within_groups_clustering_in_auditory_cortex_with_morphological_sign_flip.json
-â”œâ”€â”€ preprocessing
-â”‚         â”œâ”€â”€ 00-maxwell_filtering.py
-â”‚         â”œâ”€â”€ ...
-â”‚         â””â”€â”€ 10-make_stc.py
-â”œâ”€â”€ README
-â”œâ”€â”€ requirements_for_ubuntu_2x.txt
-â””â”€â”€ requirements_for_windows_1x.txt
 ```
-
-<font color="#ff0000">**Please read `code/README.md` file for more detail instructions.** </font>
+code
+├── analysis
+│   ├── 0-preprocessing_for_clustering
+│   ├── 1-tfce_clustering
+│   ├── 2-clustering_results_analytics
+│   └── modules
+│       ├── clustering.py
+│       └── data_ops.py
+├── envs
+│   ├── envs_for_between_groups_clustering_in_auditory_cortex_with_morphological_sign_flip.json
+│   ├── envs_for_interaction_clustering_in_auditory_cortex_with_morphological_sign_flip.json
+│   └── envs_for_within_groups_clustering_in_auditory_cortex_with_morphological_sign_flip.json
+├── preprocessing
+│   ├── 00-maxwell_filtering.py
+│   └── 10-make_stc.py
+├── README
+├── requirements_for_ubuntu_2x.txt
+└── requirements_for_windows_1x.txt
+```
 
 ### Requirements for Code Usage (MNE-Python & Additional Python Libraries)"
 
@@ -142,26 +135,26 @@ The derivatives of project has the following structure (directory names provide 
 
 ```
 derivatives/preprocessing/
-â”œâ”€â”€ fsaverage_labels_of_analytics
-â”‚         â”œâ”€â”€ auditory_cortex_region-lh.label
-â”‚         â””â”€â”€ auditory_cortex_region-rh.label
-â””â”€â”€ fsaverage_stcs_after_morph_flip_in_labels_of_analytics
-    â”œâ”€â”€ subjects_info_for_morphological_sign_flipped_data_1000Hz
-    â””â”€â”€ subjects_stc_for_morphological_sign_flipped_data_1000Hz
+├── fsaverage_labels_of_analytics
+│         ├── auditory_cortex_region-lh.label
+│         └── auditory_cortex_region-rh.label
+└── fsaverage_stcs_after_morph_flip_in_labels_of_analytics
+    ├── subjects_info_for_morphological_sign_flipped_data_1000Hz
+    └── subjects_stc_for_morphological_sign_flipped_data_1000Hz
 
 derivatives/analysis/
-â”œâ”€â”€ 20240607_74subj_v13_500Hz_5000_perm_DV-MR_TD_vs_ASD_0-800_msec_tfce_interaction_in_auditory_cortex_morph_flip_with_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v13_500Hz_5000_perm_MP-MR_TD_vs_ASD_0-800_msec_tfce_interaction_in_auditory_cortex_morph_flip_with_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v13_500Hz_5000_perm_RV-MR_TD_vs_ASD_0-800_msec_tfce_interaction_in_auditory_cortex_morph_flip_with_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v14_500Hz_5000perm_ASD_DV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v14_500Hz_5000perm_ASD_MP-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v14_500Hz_5000perm_ASD_RV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v14_500Hz_5000perm_TD_DV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v14_500Hz_5000perm_TD_MP-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v14_500Hz_5000perm_TD_RV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
-â”œâ”€â”€ 20240608_74subj_v15_500Hz_5000_perm_DV_TD_vs_ASD_in_0-800_msec_tfce_between_groups_in_auditory_cortex_morph_flip_with_5e-02_cluster_p_threshold
-â”œâ”€â”€ 20240608_74subj_v15_500Hz_5000_perm_MP_TD_vs_ASD_in_0-800_msec_tfce_between_groups_in_auditory_cortex_morph_flip_with_5e-02_cluster_p_threshold
-â””â”€â”€ 20240608_74subj_v15_500Hz_5000_perm_RV_TD_vs_ASD_in_0-800_msec_tfce_between_groups_in_auditory_cortex_morph_flip_with_5e-02_cluster_p_threshold
+├── 20240607_74subj_v13_500Hz_5000_perm_DV-MR_TD_vs_ASD_0-800_msec_tfce_interaction_in_auditory_cortex_morph_flip_with_5e-02_clusters_p_thresh
+├── 20240608_74subj_v13_500Hz_5000_perm_MP-MR_TD_vs_ASD_0-800_msec_tfce_interaction_in_auditory_cortex_morph_flip_with_5e-02_clusters_p_thresh
+├── 20240608_74subj_v13_500Hz_5000_perm_RV-MR_TD_vs_ASD_0-800_msec_tfce_interaction_in_auditory_cortex_morph_flip_with_5e-02_clusters_p_thresh
+├── 20240608_74subj_v14_500Hz_5000perm_ASD_DV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
+├── 20240608_74subj_v14_500Hz_5000perm_ASD_MP-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
+├── 20240608_74subj_v14_500Hz_5000perm_ASD_RV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
+├── 20240608_74subj_v14_500Hz_5000perm_TD_DV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
+├── 20240608_74subj_v14_500Hz_5000perm_TD_MP-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
+├── 20240608_74subj_v14_500Hz_5000perm_TD_RV-MR_0-800_msec_tfce_1samp_within_groups_in_auditory_cortex_morph_flip_5e-02_clusters_p_thresh
+├── 20240608_74subj_v15_500Hz_5000_perm_DV_TD_vs_ASD_in_0-800_msec_tfce_between_groups_in_auditory_cortex_morph_flip_with_5e-02_cluster_p_threshold
+├── 20240608_74subj_v15_500Hz_5000_perm_MP_TD_vs_ASD_in_0-800_msec_tfce_between_groups_in_auditory_cortex_morph_flip_with_5e-02_cluster_p_threshold
+└── 20240608_74subj_v15_500Hz_5000_perm_RV_TD_vs_ASD_in_0-800_msec_tfce_between_groups_in_auditory_cortex_morph_flip_with_5e-02_cluster_p_threshold
 
 ```
 
